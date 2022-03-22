@@ -53,7 +53,7 @@ class LinksController extends Controller
 			]);
 			$short_url = $request->get('shortname');
 			if ($this->checkShortUrl($short_url)) {
-				throw ValidationException::withMessages(['short_name' => 'Short link is already exists.']);
+				throw ValidationException::withMessages(['shortname' => 'Short link is already exists.']);
 			}
 		}
 		else {

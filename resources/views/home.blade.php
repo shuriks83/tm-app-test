@@ -57,7 +57,7 @@
 			.fail(function(response) {
 				if (response.status == 422) {
 					console.log(response.responseJSON);
-					$('#success_message').fadeIn().html(response.responseJSON.message);
+//					$('#success_message').fadeIn().html(response.responseJSON.message);
 					
 					// display errors on each form field
 					$.each(response.responseJSON.errors, function (i, error) {
