@@ -14,5 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/home');
+//	return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/shortLinks', [App\Http\Controllers\LinksController::class, 'index'])->name('links');
+Route::post('/shortUrl', [App\Http\Controllers\LinksController::class, 'short']);
+
+Route::get('/{shortLink}', [App\Http\Controllers\LinksController::class, 'go']);
